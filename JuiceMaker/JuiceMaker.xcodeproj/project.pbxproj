@@ -19,6 +19,10 @@
 		F42621512B1DBEFD00C6423A /* FruitStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42621502B1DBEFD00C6423A /* FruitStock.swift */; };
 		F42621532B1DBF2E00C6423A /* JuiceMakerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42621522B1DBF2E00C6423A /* JuiceMakerError.swift */; };
 		F42621552B1DBF3F00C6423A /* JuiceFlavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42621542B1DBF3F00C6423A /* JuiceFlavor.swift */; };
+		F436B6D42B232EC40045F0C8 /* StockDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6D32B232EC40045F0C8 /* StockDisplayModel.swift */; };
+		F436B6D62B2330080045F0C8 /* StockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6D52B2330080045F0C8 /* StockDisplay.swift */; };
+		F436B6D82B2337D50045F0C8 /* StockDisplayResultConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6D72B2337D50045F0C8 /* StockDisplayResultConvertable.swift */; };
+		F436B6DB2B2338810045F0C8 /* StockDisplayResultDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6DA2B2338810045F0C8 /* StockDisplayResultDisplayable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		F42621502B1DBEFD00C6423A /* FruitStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitStock.swift; sourceTree = "<group>"; };
 		F42621522B1DBF2E00C6423A /* JuiceMakerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerError.swift; sourceTree = "<group>"; };
 		F42621542B1DBF3F00C6423A /* JuiceFlavor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceFlavor.swift; sourceTree = "<group>"; };
+		F436B6D32B232EC40045F0C8 /* StockDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplayModel.swift; sourceTree = "<group>"; };
+		F436B6D52B2330080045F0C8 /* StockDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplay.swift; sourceTree = "<group>"; };
+		F436B6D72B2337D50045F0C8 /* StockDisplayResultConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplayResultConvertable.swift; sourceTree = "<group>"; };
+		F436B6DA2B2338810045F0C8 /* StockDisplayResultDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplayResultDisplayable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 				F42621502B1DBEFD00C6423A /* FruitStock.swift */,
 				F42621522B1DBF2E00C6423A /* JuiceMakerError.swift */,
 				F42621542B1DBF3F00C6423A /* JuiceFlavor.swift */,
+				F436B6D92B2338060045F0C8 /* StockDisplay */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +116,17 @@
 				C73DAF44255D0CDF00020D38 /* Info.plist */,
 			);
 			path = JuiceMaker;
+			sourceTree = "<group>";
+		};
+		F436B6D92B2338060045F0C8 /* StockDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				F436B6D32B232EC40045F0C8 /* StockDisplayModel.swift */,
+				F436B6D52B2330080045F0C8 /* StockDisplay.swift */,
+				F436B6D72B2337D50045F0C8 /* StockDisplayResultConvertable.swift */,
+				F436B6DA2B2338810045F0C8 /* StockDisplayResultDisplayable.swift */,
+			);
+			path = StockDisplay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +199,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F436B6D82B2337D50045F0C8 /* StockDisplayResultConvertable.swift in Sources */,
 				C71CD66B266C7ACB0038B9CB /* FruitStore.swift in Sources */,
+				F436B6D62B2330080045F0C8 /* StockDisplay.swift in Sources */,
 				C73DAF3B255D0CDD00020D38 /* ViewController.swift in Sources */,
 				F42621552B1DBF3F00C6423A /* JuiceFlavor.swift in Sources */,
 				F42621532B1DBF2E00C6423A /* JuiceMakerError.swift in Sources */,
@@ -188,6 +210,8 @@
 				C73DAF37255D0CDD00020D38 /* AppDelegate.swift in Sources */,
 				C73DAF39255D0CDD00020D38 /* SceneDelegate.swift in Sources */,
 				C73DAF4C255D0D0400020D38 /* JuiceMaker.swift in Sources */,
+				F436B6DB2B2338810045F0C8 /* StockDisplayResultDisplayable.swift in Sources */,
+				F436B6D42B232EC40045F0C8 /* StockDisplayModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
