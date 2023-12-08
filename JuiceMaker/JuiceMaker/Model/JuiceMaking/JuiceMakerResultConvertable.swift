@@ -10,14 +10,16 @@ protocol JuiceMakerResultConvertable {
 }
 
 final class JuiceMakerResultConverter: JuiceMakerResultConvertable {
+    weak var display: JuiceMakerResultDisplayable?
+    
     func convertResult(_ result: JuiceMaker.Respone){
         guard let juice = result.juice else {
             let viewModel = JuiceMaker.ViewModel(juiceName: nil)
-//            display?.displayStock(viewModel: viewModel)
+            display?.displayMakingResult(viewModel: viewModel)
             return
         }
         let viewModel = JuiceMaker.ViewModel(juiceName: juice.name)
-//        display?.displayStock(viewModel: viewModel)
+        display?.displayMakingResult(viewModel: viewModel)
     }
 }
 

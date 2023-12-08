@@ -25,6 +25,7 @@
 		F436B6DB2B2338810045F0C8 /* StockDisplayResultDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6DA2B2338810045F0C8 /* StockDisplayResultDisplayable.swift */; };
 		F436B6DE2B2344FA0045F0C8 /* JuiceMakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6DD2B2344FA0045F0C8 /* JuiceMakerModel.swift */; };
 		F436B6E02B23473C0045F0C8 /* JuiceMakerResultConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6DF2B23473C0045F0C8 /* JuiceMakerResultConvertable.swift */; };
+		F436B6E22B2348460045F0C8 /* JuiceMakerResultDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6E12B2348460045F0C8 /* JuiceMakerResultDisplayable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		F436B6DA2B2338810045F0C8 /* StockDisplayResultDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplayResultDisplayable.swift; sourceTree = "<group>"; };
 		F436B6DD2B2344FA0045F0C8 /* JuiceMakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerModel.swift; sourceTree = "<group>"; };
 		F436B6DF2B23473C0045F0C8 /* JuiceMakerResultConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerResultConvertable.swift; sourceTree = "<group>"; };
+		F436B6E12B2348460045F0C8 /* JuiceMakerResultDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerResultDisplayable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				C73DAF4B255D0D0400020D38 /* JuiceMaker.swift */,
 				F436B6DD2B2344FA0045F0C8 /* JuiceMakerModel.swift */,
 				F436B6DF2B23473C0045F0C8 /* JuiceMakerResultConvertable.swift */,
+				F436B6E12B2348460045F0C8 /* JuiceMakerResultDisplayable.swift */,
 			);
 			path = JuiceMaking;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				F436B6DB2B2338810045F0C8 /* StockDisplayResultDisplayable.swift in Sources */,
 				F436B6E02B23473C0045F0C8 /* JuiceMakerResultConvertable.swift in Sources */,
 				F436B6D42B232EC40045F0C8 /* StockDisplayModel.swift in Sources */,
+				F436B6E22B2348460045F0C8 /* JuiceMakerResultDisplayable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
