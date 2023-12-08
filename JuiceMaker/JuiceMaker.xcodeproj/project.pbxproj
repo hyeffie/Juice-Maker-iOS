@@ -22,6 +22,7 @@
 		F436B6D42B232EC40045F0C8 /* StockDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6D32B232EC40045F0C8 /* StockDisplayModel.swift */; };
 		F436B6D62B2330080045F0C8 /* StockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6D52B2330080045F0C8 /* StockDisplay.swift */; };
 		F436B6D82B2337D50045F0C8 /* StockDisplayResultConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6D72B2337D50045F0C8 /* StockDisplayResultConvertable.swift */; };
+		F436B6DB2B2338810045F0C8 /* StockDisplayResultDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6DA2B2338810045F0C8 /* StockDisplayResultDisplayable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F436B6D32B232EC40045F0C8 /* StockDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplayModel.swift; sourceTree = "<group>"; };
 		F436B6D52B2330080045F0C8 /* StockDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplay.swift; sourceTree = "<group>"; };
 		F436B6D72B2337D50045F0C8 /* StockDisplayResultConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplayResultConvertable.swift; sourceTree = "<group>"; };
+		F436B6DA2B2338810045F0C8 /* StockDisplayResultDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplayResultDisplayable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				F436B6D32B232EC40045F0C8 /* StockDisplayModel.swift */,
 				F436B6D52B2330080045F0C8 /* StockDisplay.swift */,
 				F436B6D72B2337D50045F0C8 /* StockDisplayResultConvertable.swift */,
+				F436B6DA2B2338810045F0C8 /* StockDisplayResultDisplayable.swift */,
 			);
 			path = StockDisplay;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				C73DAF37255D0CDD00020D38 /* AppDelegate.swift in Sources */,
 				C73DAF39255D0CDD00020D38 /* SceneDelegate.swift in Sources */,
 				C73DAF4C255D0D0400020D38 /* JuiceMaker.swift in Sources */,
+				F436B6DB2B2338810045F0C8 /* StockDisplayResultDisplayable.swift in Sources */,
 				F436B6D42B232EC40045F0C8 /* StockDisplayModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
