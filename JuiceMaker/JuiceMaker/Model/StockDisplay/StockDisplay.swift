@@ -5,10 +5,14 @@
 //  Created by Effie on 12/8/23.
 //
 
-struct StockDisplay {
+final class StockDisplay {
     private let fruitStore: FruitStore
     
-    private var resultConverter: StockDisplayResultConvertable?
+    var resultConverter: StockDisplayResultConvertable?
+    
+    init(fruitStore: FruitStore) {
+        self.fruitStore = fruitStore
+    }
     
     func displayStock() {
         let stocks = fruitStore.fetch()

@@ -6,7 +6,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     @IBOutlet weak var strawberryStockLabel: UILabel!
     
@@ -18,8 +18,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mangoStockLabel: UILabel!
     
+    private var stockDisplay: StockDisplay?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
+        stockDisplay?.displayStock()
+    }
+    
+    private func setUp() {
+        let fruitStore = FruitStore(initialCount: 10)
+        let useCase = StockDisplay(fruitStore: fruitStore)
+        let converter = StockDisplayResultConverter()
+        let viewController = self
+        viewController.stockDisplay = useCase
+        useCase.resultConverter = converter
+        converter.display = viewController
     }
 }
 

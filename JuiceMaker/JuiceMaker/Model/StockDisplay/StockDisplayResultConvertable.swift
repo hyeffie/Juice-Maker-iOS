@@ -9,8 +9,8 @@ protocol StockDisplayResultConvertable {
     func convertResult(_ result: StockDisplay.Respone)
 }
 
-struct StockDisplayResultConverter: StockDisplayResultConvertable {
-    private weak var display: StockDisplayResultDisplayable?
+final class StockDisplayResultConverter: StockDisplayResultConvertable {
+    weak var display: StockDisplayResultDisplayable?
     
     func convertResult(_ result: StockDisplay.Respone) {
         guard let stocks = result.stocks else {
