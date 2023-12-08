@@ -20,20 +20,56 @@ final class ViewController: UIViewController {
     
     private var stockDisplay: StockDisplay?
     
+    private var juiceMaker: JuiceMaker?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
         stockDisplay?.displayStock()
     }
     
+    @IBAction func makeStrawberryBananaJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .strawberryBanana)
+    }
+    
+    @IBAction func makeMangoKiwiJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .mangoKiwi)
+    }
+    
+    @IBAction func makeStrawberryJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .strawberry)
+    }
+    
+    @IBAction func makeBananaJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .banana)
+    }
+    
+    @IBAction func makePineappleJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .pineapple)
+    }
+    
+    @IBAction func makeKiwiJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .kiwi)
+    }
+    
+    @IBAction func makeMangoJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .mango)
+    }
+    
     private func setUp() {
         let fruitStore = FruitStore(initialCount: 10)
-        let useCase = StockDisplay(fruitStore: fruitStore)
-        let converter = StockDisplayResultConverter()
+        let stockDisplay = StockDisplay(fruitStore: fruitStore)
+        let stockDisplayConverter = StockDisplayResultConverter()
         let viewController = self
-        viewController.stockDisplay = useCase
-        useCase.resultConverter = converter
-        converter.display = viewController
+        viewController.stockDisplay = stockDisplay
+        stockDisplay.resultConverter = stockDisplayConverter
+        stockDisplayConverter.display = viewController
+        
+        let juiceMaker = JuiceMaker(fruitStore: fruitStore)
+        let juiceConverter = JuiceMakerResultConverter()
+        viewController.juiceMaker = juiceMaker
+        juiceMaker.resultConverter = juiceConverter
+        juiceConverter.display = viewController
     }
 }
 
@@ -48,5 +84,40 @@ extension ViewController: StockDisplayResultDisplayable {
         self.pineappleStockLabel.text = "\(eachFruitCount.pineappleCount)"
         self.kiwiStockLabel.text = "\(eachFruitCount.kiwiCount)"
         self.mangoStockLabel.text = "\(eachFruitCount.mangoCount)"
+    }
+}
+
+extension ViewController: JuiceMakerResultDisplayable {
+    func displayMakingResult(viewModel: JuiceMaker.ViewModel) {
+        guard let juiceName = viewModel.juiceName else {
+            let alertController = UIAlertController(
+                title: "알림",
+                message: "재료가 모자라요. 재고를 수정할까요?",
+                preferredStyle: .alert
+            )
+            
+            let yesAction: UIAlertAction = .init(title: "예", style: .default) { action in
+                // TODO: 화면 전환 구현
+            }
+            let noAction: UIAlertAction = .init(title: "아니오", style: .cancel)
+            alertController.addAction(yesAction)
+            alertController.addAction(noAction)
+            present(alertController, animated: true)
+            return
+        }
+        
+        // 1. trigger fetch stock
+        stockDisplay?.displayStock()
+        
+        // 2. alert
+        let alertController = UIAlertController(
+            title: "알림",
+            message: "\(juiceName) 쥬스 나왔습니다! 맛있게 드세요!",
+            preferredStyle: .alert
+        )
+        
+        let okAction: UIAlertAction = .init(title: "확인", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
     }
 }
