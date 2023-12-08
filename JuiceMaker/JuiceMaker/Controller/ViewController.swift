@@ -19,6 +19,7 @@ final class ViewController: UIViewController {
     @IBOutlet weak var mangoStockLabel: UILabel!
     
     private var stockDisplay: StockDisplay?
+    private var juiceMaker: JuiceMaker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +29,18 @@ final class ViewController: UIViewController {
     
     private func setUp() {
         let fruitStore = FruitStore(initialCount: 10)
-        let useCase = StockDisplay(fruitStore: fruitStore)
-        let converter = StockDisplayResultConverter()
+        let stockDisplay = StockDisplay(fruitStore: fruitStore)
+        let stockDisplayConverter = StockDisplayResultConverter()
         let viewController = self
-        viewController.stockDisplay = useCase
-        useCase.resultConverter = converter
-        converter.display = viewController
+        viewController.stockDisplay = stockDisplay
+        stockDisplay.resultConverter = stockDisplayConverter
+        stockDisplayConverter.display = viewController
+        
+        let juiceMaker = JuiceMaker(fruitStore: fruitStore)
+        let juiceConverter = JuiceMakerResultConverter()
+        viewController.juiceMaker = juiceMaker
+        juiceMaker.resultConverter = juiceConverter
+        juiceConverter.display = viewController
     }
 }
 
@@ -48,5 +55,11 @@ extension ViewController: StockDisplayResultDisplayable {
         self.pineappleStockLabel.text = "\(eachFruitCount.pineappleCount)"
         self.kiwiStockLabel.text = "\(eachFruitCount.kiwiCount)"
         self.mangoStockLabel.text = "\(eachFruitCount.mangoCount)"
+    }
+}
+
+extension ViewController: JuiceMakerResultDisplayable {
+    func displayMakingResult(viewModel: JuiceMaker.ViewModel) {
+        
     }
 }
