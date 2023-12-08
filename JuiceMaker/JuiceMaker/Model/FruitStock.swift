@@ -8,7 +8,7 @@
 struct FruitStock {
     let fruitType: Fruit
     
-    private var count: Int
+    let count: Int
     
     init(fruitType: Fruit, count: Int) {
         self.fruitType = fruitType
