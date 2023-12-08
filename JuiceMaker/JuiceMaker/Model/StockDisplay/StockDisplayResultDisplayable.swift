@@ -5,6 +5,8 @@
 //  Created by Effie on 12/8/23.
 //
 
-protocol StockDisplayResultDisplayable {
-    func stockDisplayResultDisplay(viewModel: StockDisplay.ViewModel)
+import Foundation
+
+protocol StockDisplayResultDisplayable: NSObjectProtocol {
+    func displayStock(viewModel: StockDisplay.ViewModel)
 }

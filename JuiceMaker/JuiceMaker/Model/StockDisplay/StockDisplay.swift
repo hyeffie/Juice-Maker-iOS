@@ -8,11 +8,11 @@
 struct StockDisplay {
     private let fruitStore: FruitStore
     
-    private var resultConverter: StockDisplayResultConvertable
+    private var resultConverter: StockDisplayResultConvertable?
     
     func displayStock() {
         let stocks = fruitStore.fetch()
         let result = StockDisplay.Respone(stocks: stocks)
-        resultConverter.convertResult(result)
+        resultConverter?.convertResult(result)
     }
 }

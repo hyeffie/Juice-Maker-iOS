@@ -10,10 +10,12 @@ protocol StockDisplayResultConvertable {
 }
 
 struct StockDisplayResultConverter: StockDisplayResultConvertable {
+    private weak var display: StockDisplayResultDisplayable?
+    
     func convertResult(_ result: StockDisplay.Respone) {
         guard let stocks = result.stocks else {
             let viewModel = StockDisplay.ViewModel(eachFruitCount: nil)
-            // TODO: 구현
+            display?.displayStock(viewModel: viewModel)
             return
         }
         
@@ -23,7 +25,7 @@ struct StockDisplayResultConverter: StockDisplayResultConvertable {
               let kiwiStock = stocks.first(where: { stock in stock.fruitType == .kiwi }),
               let mangoStock = stocks.first(where: { stock in stock.fruitType == .mango }) else {
             let viewModel = StockDisplay.ViewModel(eachFruitCount: nil)
-            // TODO: 구현
+            display?.displayStock(viewModel: viewModel)
             return
         }
         let eachFruitConut = StockDisplay.ViewModel.EachFruitCount(
@@ -34,5 +36,6 @@ struct StockDisplayResultConverter: StockDisplayResultConvertable {
             mangoCount: mangoStock.count
         )
         let viewModel = StockDisplay.ViewModel(eachFruitCount: eachFruitConut)
+        display?.displayStock(viewModel: viewModel)
     }
 }
