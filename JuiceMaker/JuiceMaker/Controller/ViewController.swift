@@ -19,6 +19,7 @@ final class ViewController: UIViewController {
     @IBOutlet weak var mangoStockLabel: UILabel!
     
     private var stockDisplay: StockDisplay?
+    
     private var juiceMaker: JuiceMaker?
     
     override func viewDidLoad() {
@@ -89,6 +90,19 @@ extension ViewController: StockDisplayResultDisplayable {
 extension ViewController: JuiceMakerResultDisplayable {
     func displayMakingResult(viewModel: JuiceMaker.ViewModel) {
         guard let juiceName = viewModel.juiceName else {
+            let alertController = UIAlertController(
+                title: "알림",
+                message: "재료가 모자라요. 재고를 수정할까요?",
+                preferredStyle: .alert
+            )
+            
+            let yesAction: UIAlertAction = .init(title: "예", style: .default) { action in
+                // TODO: 화면 전환 구현
+            }
+            let noAction: UIAlertAction = .init(title: "아니오", style: .cancel)
+            alertController.addAction(yesAction)
+            alertController.addAction(noAction)
+            present(alertController, animated: true)
             return
         }
         
