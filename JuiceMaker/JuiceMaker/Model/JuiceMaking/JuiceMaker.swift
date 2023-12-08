@@ -7,6 +7,8 @@
 struct JuiceMaker {
     private let fruitStore: FruitStore
     
+    var resultConverter: JuiceMakerResultConvertable?
+    
     init(fruitStore: FruitStore) {
         self.fruitStore = fruitStore
     }
