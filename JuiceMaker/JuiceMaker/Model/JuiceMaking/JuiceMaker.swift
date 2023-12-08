@@ -13,7 +13,18 @@ final class JuiceMaker {
         self.fruitStore = fruitStore
     }
     
-    func consumeFruitsForMakingJuice(flavor: JuiceFlavor) throws {
+    func makeJuice(flavor: JuiceFlavor) {
+        do {
+            try consumeFruitsForMakingJuice(flavor: flavor)
+            let result = JuiceMaker.Respone(juice: flavor)
+            resultConverter?.convertResult(result)
+        } catch {
+            let result = JuiceMaker.Respone(juice: nil)
+            resultConverter?.convertResult(result)
+        }
+    }
+    
+    private func consumeFruitsForMakingJuice(flavor: JuiceFlavor) throws {
         try fruitStore.consume(ingredients: flavor.recipe)
     }
 }

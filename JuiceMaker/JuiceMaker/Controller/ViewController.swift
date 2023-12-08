@@ -27,6 +27,34 @@ final class ViewController: UIViewController {
         stockDisplay?.displayStock()
     }
     
+    @IBAction func makeStrawberryBananaJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .strawberryBanana)
+    }
+    
+    @IBAction func makeMangoKiwiJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .mangoKiwi)
+    }
+    
+    @IBAction func makeStrawberryJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .strawberry)
+    }
+    
+    @IBAction func makeBananaJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .banana)
+    }
+    
+    @IBAction func makePineappleJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .pineapple)
+    }
+    
+    @IBAction func makeKiwiJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .kiwi)
+    }
+    
+    @IBAction func makeMangoJuice(_ sender: UIButton) {
+        juiceMaker?.makeJuice(flavor: .mango)
+    }
+    
     private func setUp() {
         let fruitStore = FruitStore(initialCount: 10)
         let stockDisplay = StockDisplay(fruitStore: fruitStore)
@@ -60,6 +88,22 @@ extension ViewController: StockDisplayResultDisplayable {
 
 extension ViewController: JuiceMakerResultDisplayable {
     func displayMakingResult(viewModel: JuiceMaker.ViewModel) {
+        guard let juiceName = viewModel.juiceName else {
+            return
+        }
         
+        // 1. trigger fetch stock
+        stockDisplay?.displayStock()
+        
+        // 2. alert
+        let alertController = UIAlertController(
+            title: "알림",
+            message: "\(juiceName) 쥬스 나왔습니다! 맛있게 드세요!",
+            preferredStyle: .alert
+        )
+        
+        let okAction: UIAlertAction = .init(title: "확인", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
     }
 }
