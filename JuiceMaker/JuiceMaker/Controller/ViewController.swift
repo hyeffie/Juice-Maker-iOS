@@ -23,3 +23,16 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: StockDisplayResultDisplayable {
+    func displayStock(viewModel: StockDisplay.ViewModel) {
+        guard let eachFruitCount = viewModel.eachFruitCount else {
+            // TODO: 구현
+            return
+        }
+        self.strawberryStockLabel.text = "\(eachFruitCount.strawberryCount)"
+        self.bananaStockLabel.text = "\(eachFruitCount.bananaCount)"
+        self.pineappleStockLabel.text = "\(eachFruitCount.pineappleCount)"
+        self.kiwiStockLabel.text = "\(eachFruitCount.kiwiCount)"
+        self.mangoStockLabel.text = "\(eachFruitCount.mangoCount)"
+    }
+}
