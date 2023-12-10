@@ -22,6 +22,16 @@ final class ViewController: UIViewController {
     
     private var juiceMaker: JuiceMaker?
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    init?(coder: NSCoder, fruitStore: FruitStore) {
+        self.stockDisplay = StockDisplay(fruitStore: fruitStore)
+        self.juiceMaker = JuiceMaker(fruitStore: fruitStore)
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
