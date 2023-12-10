@@ -8,15 +8,15 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    @IBOutlet weak var strawberryStockLabel: UILabel!
+    @IBOutlet private weak var strawberryStockLabel: UILabel!
     
-    @IBOutlet weak var bananaStockLabel: UILabel!
+    @IBOutlet private weak var bananaStockLabel: UILabel!
     
-    @IBOutlet weak var pineappleStockLabel: UILabel!
+    @IBOutlet private weak var pineappleStockLabel: UILabel!
     
-    @IBOutlet weak var kiwiStockLabel: UILabel!
+    @IBOutlet private weak var kiwiStockLabel: UILabel!
     
-    @IBOutlet weak var mangoStockLabel: UILabel!
+    @IBOutlet private weak var mangoStockLabel: UILabel!
     
     private var stockDisplay: StockDisplay?
     
