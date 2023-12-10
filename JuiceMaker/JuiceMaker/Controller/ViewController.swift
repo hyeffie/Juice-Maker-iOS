@@ -8,6 +8,10 @@ import UIKit
 
 final class ViewController: UIViewController {
     
+    static var storyboardIdentifier: String {
+        return String(describing: self)
+    }
+    
     @IBOutlet private weak var strawberryStockLabel: UILabel!
     
     @IBOutlet private weak var bananaStockLabel: UILabel!
@@ -30,11 +34,11 @@ final class ViewController: UIViewController {
         self.stockDisplay = StockDisplay(fruitStore: fruitStore)
         self.juiceMaker = JuiceMaker(fruitStore: fruitStore)
         super.init(coder: coder)
+        setUp()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUp()
         stockDisplay?.displayStock()
     }
     
@@ -67,19 +71,13 @@ final class ViewController: UIViewController {
     }
     
     private func setUp() {
-        let fruitStore = FruitStore(initialCount: 10)
-        let stockDisplay = StockDisplay(fruitStore: fruitStore)
         let stockDisplayConverter = StockDisplayResultConverter()
-        let viewController = self
-        viewController.stockDisplay = stockDisplay
-        stockDisplay.resultConverter = stockDisplayConverter
-        stockDisplayConverter.display = viewController
+        self.stockDisplay?.resultConverter = stockDisplayConverter
+        stockDisplayConverter.display = self
         
-        let juiceMaker = JuiceMaker(fruitStore: fruitStore)
         let juiceConverter = JuiceMakerResultConverter()
-        viewController.juiceMaker = juiceMaker
-        juiceMaker.resultConverter = juiceConverter
-        juiceConverter.display = viewController
+        self.juiceMaker?.resultConverter = juiceConverter
+        juiceConverter.display = self
     }
 }
 
