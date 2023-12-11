@@ -17,10 +17,23 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiale 
     init?(coder: NSCoder, fruitStore: FruitStore) {
         self.stockDisplay = StockDisplay(fruitStore: fruitStore)
         super.init(coder: coder)
+        setUp()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        stockDisplay?.displayStock()
+    }
+    
+    private func setUp() {
+        let resultConverter = StockDisplayResultConverter()
+        resultConverter.display = self
+        stockDisplay?.resultConverter = resultConverter
+    }
+}
+
+extension StockManagerViewController: StockDisplayResultDisplayable {
+    func displayStock(viewModel: StockDisplay.ViewModel) {
         
     }
 }
