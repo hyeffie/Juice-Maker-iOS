@@ -1,16 +1,12 @@
 //
-//  JuiceMaker - ViewController.swift
+//  JuiceMaker - JuiceMakerViewController.swift
 //  Created by yagom. 
 //  Copyright © yagom academy. All rights reserved.
 // 
 
 import UIKit
 
-final class ViewController: UIViewController {
-    
-    static var storyboardIdentifier: String {
-        return String(describing: self)
-    }
+final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
     
     @IBOutlet private weak var strawberryStockLabel: UILabel!
     
@@ -26,6 +22,8 @@ final class ViewController: UIViewController {
     
     private var juiceMaker: JuiceMaker?
     
+    private var router: JuiceMakerRouter?
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -34,6 +32,7 @@ final class ViewController: UIViewController {
         self.stockDisplay = StockDisplay(fruitStore: fruitStore)
         self.juiceMaker = JuiceMaker(fruitStore: fruitStore)
         super.init(coder: coder)
+        self.router = JuiceMakerRouter(sourceViewController: self, dataStore: fruitStore)
         setUp()
     }
     
@@ -70,6 +69,10 @@ final class ViewController: UIViewController {
         juiceMaker?.makeJuice(flavor: .mango)
     }
     
+    @IBAction func editStock(_ sender: UIBarButtonItem) {
+        router?.routeToStockManager()
+    }
+    
     private func setUp() {
         let stockDisplayConverter = StockDisplayResultConverter()
         self.stockDisplay?.resultConverter = stockDisplayConverter
@@ -81,7 +84,7 @@ final class ViewController: UIViewController {
     }
 }
 
-extension ViewController: StockDisplayResultDisplayable {
+extension JuiceMakerViewController: StockDisplayResultDisplayable {
     func displayStock(viewModel: StockDisplay.ViewModel) {
         guard let eachFruitCount = viewModel.eachFruitCount else {
             // TODO: 구현
@@ -95,7 +98,7 @@ extension ViewController: StockDisplayResultDisplayable {
     }
 }
 
-extension ViewController: JuiceMakerResultDisplayable {
+extension JuiceMakerViewController: JuiceMakerResultDisplayable {
     func displayMakingResult(viewModel: JuiceMaker.ViewModel) {
         guard let juiceName = viewModel.juiceName else {
             let alertController = UIAlertController(
