@@ -6,11 +6,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
-    
-    static var storyboardIdentifier: String {
-        return String(describing: self)
-    }
+final class ViewController: UIViewController, StoryboardIdentifiale {
     
     @IBOutlet private weak var strawberryStockLabel: UILabel!
     
