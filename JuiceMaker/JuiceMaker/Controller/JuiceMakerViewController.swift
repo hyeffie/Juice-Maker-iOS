@@ -105,19 +105,8 @@ extension JuiceMakerViewController: StockDisplayResultDisplayable {
 extension JuiceMakerViewController: JuiceMakerResultDisplayable {
     func displayMakingResult(viewModel: JuiceMakerModel.ViewModel) {
         guard let juiceName = viewModel.juiceName else {
-            let alertController = UIAlertController(
-                title: "알림",
-                message: "재료가 모자라요. 재고를 수정할까요?",
-                preferredStyle: .alert
-            )
-            
-            let yesAction: UIAlertAction = .init(title: "예", style: .default) { [weak self] action in
-                self?.router?.routeToStockManager()
-            }
-            let noAction: UIAlertAction = .init(title: "아니오", style: .cancel)
-            alertController.addAction(yesAction)
-            alertController.addAction(noAction)
-            present(alertController, animated: true)
+            let action = { [weak self] (_: UIAlertAction) -> Void in self?.router?.routeToStockManager() }
+            present(JuiceMakerAlert.fruitShortage(editAction: action).alertController, animated: true)
             return
         }
         
@@ -125,14 +114,6 @@ extension JuiceMakerViewController: JuiceMakerResultDisplayable {
         stockDisplay?.displayStock()
         
         // 2. alert
-        let alertController = UIAlertController(
-            title: "알림",
-            message: "\(juiceName) 쥬스 나왔습니다! 맛있게 드세요!",
-            preferredStyle: .alert
-        )
-        
-        let okAction: UIAlertAction = .init(title: "확인", style: .default)
-        alertController.addAction(okAction)
-        present(alertController, animated: true)
+        present(JuiceMakerAlert.juiceIsReady(juiceName: juiceName).alertController, animated: true)
     }
 }
