@@ -66,6 +66,10 @@ final class ViewController: UIViewController, StoryboardIdentifiale {
         juiceMaker?.makeJuice(flavor: .mango)
     }
     
+    @IBAction func editStock(_ sender: UIBarButtonItem) {
+        
+    }
+    
     private func setUp() {
         let stockDisplayConverter = StockDisplayResultConverter()
         self.stockDisplay?.resultConverter = stockDisplayConverter
