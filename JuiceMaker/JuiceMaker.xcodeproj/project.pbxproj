@@ -72,11 +72,8 @@
 		C71CD66D266C7B470038B9CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C73DAF36255D0CDD00020D38 /* AppDelegate.swift */,
-				C73DAF38255D0CDD00020D38 /* SceneDelegate.swift */,
 				C73DAF3A255D0CDD00020D38 /* ViewController.swift */,
 				F436B6E92B26A6F70045F0C8 /* StockManagerViewController.swift */,
-				F436B6EB2B26A7D70045F0C8 /* StoryboardIdentifiale.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -84,14 +81,10 @@
 		C71CD66F266C7B500038B9CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F436B6DC2B23449A0045F0C8 /* JuiceMaking */,
-				C71CD66A266C7ACB0038B9CB /* FruitStore.swift */,
 				F426214E2B1DBEE800C6423A /* Fruit.swift */,
 				F42621502B1DBEFD00C6423A /* FruitStock.swift */,
-				F42621522B1DBF2E00C6423A /* JuiceMakerError.swift */,
+				C71CD66A266C7ACB0038B9CB /* FruitStore.swift */,
 				F42621542B1DBF3F00C6423A /* JuiceFlavor.swift */,
-				F436B6ED2B26AA7E0045F0C8 /* JuiceMakerRoutable.swift */,
-				F436B6D92B2338060045F0C8 /* StockDisplay */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,9 +118,12 @@
 		C73DAF35255D0CDD00020D38 /* JuiceMaker */ = {
 			isa = PBXGroup;
 			children = (
-				C71CD66D266C7B470038B9CB /* Controller */,
+				F436B6F02B26C1750045F0C8 /* Common */,
+				F436B6F12B26C19A0045F0C8 /* App */,
+				F436B6EF2B26C0E20045F0C8 /* UseCase */,
 				C71CD66F266C7B500038B9CB /* Model */,
 				C71CD671266C7B570038B9CB /* View */,
+				C71CD66D266C7B470038B9CB /* Controller */,
 				C73DAF44255D0CDF00020D38 /* Info.plist */,
 			);
 			path = JuiceMaker;
@@ -147,12 +143,48 @@
 		F436B6DC2B23449A0045F0C8 /* JuiceMaking */ = {
 			isa = PBXGroup;
 			children = (
-				C73DAF4B255D0D0400020D38 /* JuiceMaker.swift */,
 				F436B6DD2B2344FA0045F0C8 /* JuiceMakerModel.swift */,
+				C73DAF4B255D0D0400020D38 /* JuiceMaker.swift */,
 				F436B6DF2B23473C0045F0C8 /* JuiceMakerResultConvertable.swift */,
 				F436B6E12B2348460045F0C8 /* JuiceMakerResultDisplayable.swift */,
 			);
 			path = JuiceMaking;
+			sourceTree = "<group>";
+		};
+		F436B6EF2B26C0E20045F0C8 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				F436B6DC2B23449A0045F0C8 /* JuiceMaking */,
+				F436B6D92B2338060045F0C8 /* StockDisplay */,
+				F436B6F22B26C1D10045F0C8 /* Router */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		F436B6F02B26C1750045F0C8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F436B6EB2B26A7D70045F0C8 /* StoryboardIdentifiale.swift */,
+				F42621522B1DBF2E00C6423A /* JuiceMakerError.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F436B6F12B26C19A0045F0C8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C73DAF36255D0CDD00020D38 /* AppDelegate.swift */,
+				C73DAF38255D0CDD00020D38 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F436B6F22B26C1D10045F0C8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F436B6ED2B26AA7E0045F0C8 /* JuiceMakerRoutable.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
