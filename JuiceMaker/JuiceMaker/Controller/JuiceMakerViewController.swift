@@ -18,21 +18,24 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
     
     @IBOutlet private weak var mangoStockLabel: UILabel!
     
-    private var stockDisplay: StockDisplay?
+    private let stockDisplay: StockDisplay?
     
-    private var juiceMaker: JuiceMaker?
+    private let juiceMaker: JuiceMaker?
     
-    private var router: JuiceMakerRouter?
+    private let router: JuiceMakerRouter?
     
     required init?(coder: NSCoder) {
+        self.stockDisplay = nil
+        self.juiceMaker = nil
+        self.router = nil
         super.init(coder: coder)
     }
     
     init?(coder: NSCoder, fruitStore: FruitStore) {
         self.stockDisplay = StockDisplay(fruitStore: fruitStore)
         self.juiceMaker = JuiceMaker(fruitStore: fruitStore)
+        self.router = JuiceMakerRouter(dataStore: fruitStore)
         super.init(coder: coder)
-        self.router = JuiceMakerRouter(sourceViewController: self, dataStore: fruitStore)
         setUp()
     }
     
@@ -81,11 +84,13 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
         let juiceConverter = JuiceMakerResultConverter()
         self.juiceMaker?.resultConverter = juiceConverter
         juiceConverter.display = self
+        
+        self.router?.sourceViewController = self
     }
 }
 
 extension JuiceMakerViewController: StockDisplayResultDisplayable {
-    func displayStock(viewModel: StockDisplay.ViewModel) {
+    func displayStock(viewModel: StockDisplayModel.ViewModel) {
         guard let eachFruitCount = viewModel.eachFruitCount else {
             // TODO: 구현
             return
@@ -99,7 +104,7 @@ extension JuiceMakerViewController: StockDisplayResultDisplayable {
 }
 
 extension JuiceMakerViewController: JuiceMakerResultDisplayable {
-    func displayMakingResult(viewModel: JuiceMaker.ViewModel) {
+    func displayMakingResult(viewModel: JuiceMakerModel.ViewModel) {
         guard let juiceName = viewModel.juiceName else {
             let alertController = UIAlertController(
                 title: "알림",

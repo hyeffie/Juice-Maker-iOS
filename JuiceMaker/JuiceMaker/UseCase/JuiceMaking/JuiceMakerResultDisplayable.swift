@@ -8,6 +8,6 @@
 import Foundation
 
 protocol JuiceMakerResultDisplayable: NSObjectProtocol {
-    func displayMakingResult(viewModel: JuiceMaker.ViewModel)
+    func displayMakingResult(viewModel: JuiceMakerModel.ViewModel)
 }
 

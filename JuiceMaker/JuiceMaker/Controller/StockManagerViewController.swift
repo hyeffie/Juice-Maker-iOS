@@ -18,9 +18,10 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiale 
     
     @IBOutlet private weak var mangoStockLabel: UILabel!
     
-    private var stockDisplay: StockDisplay?
+    private let stockDisplay: StockDisplay?
     
     required init?(coder: NSCoder) {
+        self.stockDisplay = nil
         super.init(coder: coder)
     }
     
@@ -48,7 +49,7 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiale 
 }
 
 extension StockManagerViewController: StockDisplayResultDisplayable {
-    func displayStock(viewModel: StockDisplay.ViewModel) {
+    func displayStock(viewModel: StockDisplayModel.ViewModel) {
         guard let eachFruitCount = viewModel.eachFruitCount else {
             // TODO: 구현
             return

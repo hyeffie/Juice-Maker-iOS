@@ -16,7 +16,7 @@ final class StockDisplay {
     
     func displayStock() {
         let stocks = fruitStore.fetch()
-        let result = StockDisplay.Respone(stocks: stocks)
+        let result = StockDisplayModel.Respone(stocks: stocks)
         resultConverter?.convertResult(result)
     }
 }

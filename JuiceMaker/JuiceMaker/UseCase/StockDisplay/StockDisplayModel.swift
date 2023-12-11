@@ -5,7 +5,7 @@
 //  Created by Effie on 12/8/23.
 //
 
-extension StockDisplay {
+enum StockDisplayModel {
     struct Respone {
         let stocks: [FruitStock]?
     }
