@@ -8,10 +8,10 @@
 import UIKit
 
 struct JuiceMakerRouter {
-    private let sourceViewController: ViewController
+    private let sourceViewController: JuiceMakerViewController
     private let sourceDataStore: FruitStore
     
-    init(sourceViewController: ViewController, dataStore: FruitStore) {
+    init(sourceViewController: JuiceMakerViewController, dataStore: FruitStore) {
         self.sourceViewController = sourceViewController
         self.sourceDataStore = dataStore
     }
@@ -26,7 +26,7 @@ struct JuiceMakerRouter {
     }
     
     private func navigateToStockManager(
-        source: ViewController,
+        source: JuiceMakerViewController,
         destination: StockManagerViewController
     ) {
         source.present(destination, animated: true)

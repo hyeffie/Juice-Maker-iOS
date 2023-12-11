@@ -1,12 +1,12 @@
 //
-//  JuiceMaker - ViewController.swift
+//  JuiceMaker - JuiceMakerViewController.swift
 //  Created by yagom. 
 //  Copyright © yagom academy. All rights reserved.
 // 
 
 import UIKit
 
-final class ViewController: UIViewController, StoryboardIdentifiale {
+final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
     
     @IBOutlet private weak var strawberryStockLabel: UILabel!
     
@@ -84,7 +84,7 @@ final class ViewController: UIViewController, StoryboardIdentifiale {
     }
 }
 
-extension ViewController: StockDisplayResultDisplayable {
+extension JuiceMakerViewController: StockDisplayResultDisplayable {
     func displayStock(viewModel: StockDisplay.ViewModel) {
         guard let eachFruitCount = viewModel.eachFruitCount else {
             // TODO: 구현
@@ -98,7 +98,7 @@ extension ViewController: StockDisplayResultDisplayable {
     }
 }
 
-extension ViewController: JuiceMakerResultDisplayable {
+extension JuiceMakerViewController: JuiceMakerResultDisplayable {
     func displayMakingResult(viewModel: JuiceMaker.ViewModel) {
         guard let juiceName = viewModel.juiceName else {
             let alertController = UIAlertController(

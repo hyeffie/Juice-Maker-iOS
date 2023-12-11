@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let fruitStore = FruitStore(initialCount: 10)
         
         let storyboard = UIStoryboard(name: "Main", bundle: .none)
-        let viewController = storyboard.instantiateViewController(identifier: ViewController.storyboardIdentifier) { coder in
-            return ViewController(coder: coder, fruitStore: fruitStore)
+        let viewController = storyboard.instantiateViewController(identifier: JuiceMakerViewController.storyboardIdentifier) { coder in
+            return JuiceMakerViewController(coder: coder, fruitStore: fruitStore)
         }
         window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
