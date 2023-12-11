@@ -398,7 +398,13 @@
                             <constraint firstItem="Ofz-a7-RAD" firstAttribute="centerX" secondItem="tKV-4l-Vtc" secondAttribute="centerX" id="Uhk-hu-oh6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="g4W-fY-l7r"/>
+                    <navigationItem key="navigationItem" id="g4W-fY-l7r">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="fge-Sw-Hep">
+                            <connections>
+                                <action selector="completeManaging:" destination="Yu1-lM-nqp" id="diO-vU-QTd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bananaStockLabel" destination="gKu-86-RhI" id="Mig-VK-Rvg"/>
                         <outlet property="kiwiStockLabel" destination="ZDv-1m-HBY" id="uuc-91-ZkG"/>

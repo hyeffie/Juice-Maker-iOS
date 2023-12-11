@@ -29,6 +29,7 @@ struct JuiceMakerRouter {
         source: JuiceMakerViewController,
         destination: StockManagerViewController
     ) {
-        source.present(destination, animated: true)
+        let navigationController = UINavigationController(rootViewController: destination)
+        source.present(navigationController, animated: true)
     }
 }

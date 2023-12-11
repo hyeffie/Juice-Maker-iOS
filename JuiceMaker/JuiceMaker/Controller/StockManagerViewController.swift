@@ -35,6 +35,11 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiale 
         stockDisplay?.displayStock()
     }
     
+    @IBAction func completeManaging(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    
     private func setUp() {
         let resultConverter = StockDisplayResultConverter()
         resultConverter.display = self
