@@ -6,15 +6,15 @@
 //
 
 protocol StockDisplayResultConvertable {
-    func convertResult(_ result: StockDisplay.Respone)
+    func convertResult(_ result: StockDisplayModel.Respone)
 }
 
 final class StockDisplayResultConverter: StockDisplayResultConvertable {
     weak var display: StockDisplayResultDisplayable?
     
-    func convertResult(_ result: StockDisplay.Respone) {
+    func convertResult(_ result: StockDisplayModel.Respone) {
         guard let stocks = result.stocks else {
-            let viewModel = StockDisplay.ViewModel(eachFruitCount: nil)
+            let viewModel = StockDisplayModel.ViewModel(eachFruitCount: nil)
             display?.displayStock(viewModel: viewModel)
             return
         }
@@ -24,18 +24,18 @@ final class StockDisplayResultConverter: StockDisplayResultConvertable {
               let pineappleStock = stocks.first(where: { stock in stock.fruitType == .pineapple }),
               let kiwiStock = stocks.first(where: { stock in stock.fruitType == .kiwi }),
               let mangoStock = stocks.first(where: { stock in stock.fruitType == .mango }) else {
-            let viewModel = StockDisplay.ViewModel(eachFruitCount: nil)
+            let viewModel = StockDisplayModel.ViewModel(eachFruitCount: nil)
             display?.displayStock(viewModel: viewModel)
             return
         }
-        let eachFruitConut = StockDisplay.ViewModel.EachFruitCount(
+        let eachFruitConut = StockDisplayModel.ViewModel.EachFruitCount(
             strawberryCount: strawberryStock.count,
             bananaCount: bananaStock.count,
             pineappleCount: pineappleStock.count,
             kiwiCount: kiwiStock.count,
             mangoCount: mangoStock.count
         )
-        let viewModel = StockDisplay.ViewModel(eachFruitCount: eachFruitConut)
+        let viewModel = StockDisplayModel.ViewModel(eachFruitCount: eachFruitConut)
         display?.displayStock(viewModel: viewModel)
     }
 }

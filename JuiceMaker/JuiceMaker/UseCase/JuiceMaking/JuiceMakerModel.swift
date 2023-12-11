@@ -5,7 +5,7 @@
 //  Created by Effie on 12/8/23.
 //
 
-extension JuiceMaker {
+enum JuiceMakerModel {
     struct Respone {
         let juice: JuiceFlavor?
     }

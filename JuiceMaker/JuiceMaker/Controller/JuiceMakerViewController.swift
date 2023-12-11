@@ -32,7 +32,7 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
         self.stockDisplay = StockDisplay(fruitStore: fruitStore)
         self.juiceMaker = JuiceMaker(fruitStore: fruitStore)
         super.init(coder: coder)
-        self.router = JuiceMakerRouter(sourceViewController: self, dataStore: fruitStore)
+        self.router = JuiceMakerRouter(dataStore: fruitStore)
         setUp()
     }
     
@@ -81,11 +81,13 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
         let juiceConverter = JuiceMakerResultConverter()
         self.juiceMaker?.resultConverter = juiceConverter
         juiceConverter.display = self
+        
+        self.router?.sourceViewController = self
     }
 }
 
 extension JuiceMakerViewController: StockDisplayResultDisplayable {
-    func displayStock(viewModel: StockDisplay.ViewModel) {
+    func displayStock(viewModel: StockDisplayModel.ViewModel) {
         guard let eachFruitCount = viewModel.eachFruitCount else {
             // TODO: 구현
             return
@@ -99,7 +101,7 @@ extension JuiceMakerViewController: StockDisplayResultDisplayable {
 }
 
 extension JuiceMakerViewController: JuiceMakerResultDisplayable {
-    func displayMakingResult(viewModel: JuiceMaker.ViewModel) {
+    func displayMakingResult(viewModel: JuiceMakerModel.ViewModel) {
         guard let juiceName = viewModel.juiceName else {
             let alertController = UIAlertController(
                 title: "알림",

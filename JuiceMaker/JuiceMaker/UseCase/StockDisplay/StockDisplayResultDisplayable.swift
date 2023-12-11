@@ -8,5 +8,5 @@
 import Foundation
 
 protocol StockDisplayResultDisplayable: NSObjectProtocol {
-    func displayStock(viewModel: StockDisplay.ViewModel)
+    func displayStock(viewModel: StockDisplayModel.ViewModel)
 }

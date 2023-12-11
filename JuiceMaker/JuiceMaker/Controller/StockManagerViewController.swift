@@ -48,7 +48,7 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiale 
 }
 
 extension StockManagerViewController: StockDisplayResultDisplayable {
-    func displayStock(viewModel: StockDisplay.ViewModel) {
+    func displayStock(viewModel: StockDisplayModel.ViewModel) {
         guard let eachFruitCount = viewModel.eachFruitCount else {
             // TODO: 구현
             return
