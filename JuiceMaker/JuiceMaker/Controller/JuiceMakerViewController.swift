@@ -18,21 +18,24 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
     
     @IBOutlet private weak var mangoStockLabel: UILabel!
     
-    private var stockDisplay: StockDisplay?
+    private let stockDisplay: StockDisplay?
     
-    private var juiceMaker: JuiceMaker?
+    private let juiceMaker: JuiceMaker?
     
-    private var router: JuiceMakerRouter?
+    private let router: JuiceMakerRouter?
     
     required init?(coder: NSCoder) {
+        self.stockDisplay = nil
+        self.juiceMaker = nil
+        self.router = nil
         super.init(coder: coder)
     }
     
     init?(coder: NSCoder, fruitStore: FruitStore) {
         self.stockDisplay = StockDisplay(fruitStore: fruitStore)
         self.juiceMaker = JuiceMaker(fruitStore: fruitStore)
-        super.init(coder: coder)
         self.router = JuiceMakerRouter(dataStore: fruitStore)
+        super.init(coder: coder)
         setUp()
     }
     

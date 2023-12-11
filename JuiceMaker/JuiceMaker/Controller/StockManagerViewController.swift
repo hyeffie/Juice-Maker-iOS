@@ -18,9 +18,10 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiale 
     
     @IBOutlet private weak var mangoStockLabel: UILabel!
     
-    private var stockDisplay: StockDisplay?
+    private let stockDisplay: StockDisplay?
     
     required init?(coder: NSCoder) {
+        self.stockDisplay = nil
         super.init(coder: coder)
     }
     

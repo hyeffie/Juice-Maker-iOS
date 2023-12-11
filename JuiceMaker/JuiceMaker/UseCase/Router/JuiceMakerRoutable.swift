@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct JuiceMakerRouter {
+final class JuiceMakerRouter {
     private let sourceDataStore: FruitStore
     var sourceViewController: JuiceMakerViewController?
     
@@ -18,10 +18,12 @@ struct JuiceMakerRouter {
     func routeToStockManager() {
         guard let sourceViewController else { return }
         let storyboard = UIStoryboard(name: "Main", bundle: .none)
-        let destinationViewController: StockManagerViewController = storyboard.instantiateViewController(identifier: StockManagerViewController.storyboardIdentifier) { coder in
+        let destinationViewController: StockManagerViewController = storyboard.instantiateViewController(
+            identifier: StockManagerViewController.storyboardIdentifier
+        ) { [weak self] coder in
+            guard let self else { return StockManagerViewController(coder: coder) }
             return StockManagerViewController(coder: coder, fruitStore: sourceDataStore)
         }
-        
         navigateToStockManager(source: sourceViewController, destination: destinationViewController)
     }
     
