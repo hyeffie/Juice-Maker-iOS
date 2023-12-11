@@ -92,7 +92,6 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
 extension JuiceMakerViewController: StockDisplayResultDisplayable {
     func displayStock(viewModel: StockDisplayModel.ViewModel) {
         guard let eachFruitCount = viewModel.eachFruitCount else {
-            // TODO: 구현
             return
         }
         self.strawberryStockLabel.text = "\(eachFruitCount.strawberryCount)"
@@ -112,8 +111,8 @@ extension JuiceMakerViewController: JuiceMakerResultDisplayable {
                 preferredStyle: .alert
             )
             
-            let yesAction: UIAlertAction = .init(title: "예", style: .default) { action in
-                // TODO: 화면 전환 구현
+            let yesAction: UIAlertAction = .init(title: "예", style: .default) { [weak self] action in
+                self?.router?.routeToStockManager()
             }
             let noAction: UIAlertAction = .init(title: "아니오", style: .cancel)
             alertController.addAction(yesAction)
