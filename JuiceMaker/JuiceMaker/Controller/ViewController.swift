@@ -22,6 +22,8 @@ final class ViewController: UIViewController, StoryboardIdentifiale {
     
     private var juiceMaker: JuiceMaker?
     
+    private var router: JuiceMakerRouter?
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -30,6 +32,7 @@ final class ViewController: UIViewController, StoryboardIdentifiale {
         self.stockDisplay = StockDisplay(fruitStore: fruitStore)
         self.juiceMaker = JuiceMaker(fruitStore: fruitStore)
         super.init(coder: coder)
+        self.router = JuiceMakerRouter(sourceViewController: self, dataStore: fruitStore)
         setUp()
     }
     
@@ -67,7 +70,7 @@ final class ViewController: UIViewController, StoryboardIdentifiale {
     }
     
     @IBAction func editStock(_ sender: UIBarButtonItem) {
-        
+        router?.routeToStockManager()
     }
     
     private func setUp() {
