@@ -50,10 +50,8 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiale 
 
 extension StockManagerViewController: StockDisplayResultDisplayable {
     func displayStock(viewModel: StockDisplayModel.ViewModel) {
-        guard let eachFruitCount = viewModel.eachFruitCount else {
-            // TODO: 구현
-            return
-        }
+        guard let eachFruitCount = viewModel.eachFruitCount else { return }
+        
         self.strawberryStockLabel.text = "\(eachFruitCount.strawberryCount)"
         self.bananaStockLabel.text = "\(eachFruitCount.bananaCount)"
         self.pineappleStockLabel.text = "\(eachFruitCount.pineappleCount)"

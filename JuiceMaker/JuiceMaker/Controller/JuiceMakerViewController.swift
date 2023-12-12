@@ -91,9 +91,8 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
 
 extension JuiceMakerViewController: StockDisplayResultDisplayable {
     func displayStock(viewModel: StockDisplayModel.ViewModel) {
-        guard let eachFruitCount = viewModel.eachFruitCount else {
-            return
-        }
+        guard let eachFruitCount = viewModel.eachFruitCount else { return }
+        
         self.strawberryStockLabel.text = "\(eachFruitCount.strawberryCount)"
         self.bananaStockLabel.text = "\(eachFruitCount.bananaCount)"
         self.pineappleStockLabel.text = "\(eachFruitCount.pineappleCount)"
@@ -105,7 +104,7 @@ extension JuiceMakerViewController: StockDisplayResultDisplayable {
 extension JuiceMakerViewController: JuiceMakerResultDisplayable {
     func displayMakingResult(viewModel: JuiceMakerModel.ViewModel) {
         guard let juiceName = viewModel.juiceName else {
-            let action = { [weak self] (_: UIAlertAction) -> Void in self?.router?.routeToStockManager() }
+            let action: AlertActionHandler = { [weak self] _ in self?.router?.routeToStockManager() }
             present(JuiceMakerAlert.fruitShortage(editAction: action).alertController, animated: true)
             return
         }

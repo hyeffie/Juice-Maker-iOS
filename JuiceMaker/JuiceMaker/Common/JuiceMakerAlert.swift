@@ -7,9 +7,11 @@
 
 import UIKit
 
+typealias AlertActionHandler = ((UIAlertAction) -> Void)
+
 enum JuiceMakerAlert {
     case juiceIsReady(juiceName: String)
-    case fruitShortage(editAction: ((UIAlertAction) -> Void)?)
+    case fruitShortage(editAction: AlertActionHandler?)
     
     private var title: String {
         return "알림"
