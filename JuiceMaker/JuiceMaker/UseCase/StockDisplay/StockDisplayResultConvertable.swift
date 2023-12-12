@@ -6,13 +6,13 @@
 //
 
 protocol StockDisplayResultConvertable {
-    func convertResult(_ result: StockDisplayModel.Respone)
+    func convertResult(_ result: StockDisplayModel.Result)
 }
 
 final class StockDisplayResultConverter: StockDisplayResultConvertable {
     weak var display: StockDisplayResultDisplayable?
     
-    func convertResult(_ result: StockDisplayModel.Respone) {
+    func convertResult(_ result: StockDisplayModel.Result) {
         guard let stocks = result.stocks else {
             let viewModel = StockDisplayModel.ViewModel(eachFruitCount: nil)
             display?.displayStock(viewModel: viewModel)

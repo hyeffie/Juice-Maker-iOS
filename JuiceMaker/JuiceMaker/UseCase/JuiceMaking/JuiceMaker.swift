@@ -16,10 +16,10 @@ final class JuiceMaker {
     func makeJuice(flavor: JuiceFlavor) {
         do {
             try consumeFruitsForMakingJuice(flavor: flavor)
-            let result = JuiceMakerModel.Respone(juice: flavor)
+            let result = JuiceMakerModel.Result(juice: flavor)
             resultConverter?.convertResult(result)
         } catch {
-            let result = JuiceMakerModel.Respone(juice: nil)
+            let result = JuiceMakerModel.Result(juice: nil)
             resultConverter?.convertResult(result)
         }
     }

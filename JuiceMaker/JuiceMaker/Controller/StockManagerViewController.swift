@@ -40,7 +40,6 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiale 
         self.dismiss(animated: true)
     }
     
-    
     private func setUp() {
         let resultConverter = StockDisplayResultConverter()
         resultConverter.display = self

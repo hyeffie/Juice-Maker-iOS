@@ -6,7 +6,7 @@
 //
 
 enum JuiceMakerModel {
-    struct Respone {
+    struct Result {
         let juice: JuiceFlavor?
     }
     

@@ -17,6 +17,7 @@ final class JuiceMakerRouter {
     
     func routeToStockManager() {
         guard let sourceViewController else { return }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: .none)
         let destinationViewController: StockManagerViewController = storyboard.instantiateViewController(
             identifier: StockManagerViewController.storyboardIdentifier

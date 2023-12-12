@@ -6,7 +6,7 @@
 //
 
 enum StockDisplayModel {
-    struct Respone {
+    struct Result {
         let stocks: [FruitStock]?
     }
     
