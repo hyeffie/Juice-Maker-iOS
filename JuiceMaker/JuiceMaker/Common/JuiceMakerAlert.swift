@@ -35,6 +35,8 @@ enum JuiceMakerAlert {
         
         switch self {
         case .juiceIsReady:
+            let okAction = UIAlertAction(title: "확인", style: .default)
+            alertController.addAction(okAction)
             return alertController
         case .fruitShortage(let editAction):
             alertController.addAction(UIAlertAction(title: "예", style: .default, handler: editAction))
