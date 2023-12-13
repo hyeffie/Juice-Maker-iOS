@@ -7,7 +7,25 @@
 
 import UIKit
 
-final class JuiceMakerRouter {
+protocol JuiceMakerRoutable: AnyObject {
+    var sourceViewController: JuiceMakerViewController? { get set }
+    func routeToNextViewController()
+}
+
+final class JuiceMakerRouter: JuiceMakerRoutable {
+    func routeToNextViewController() {
+        guard let sourceViewController else { return }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: .none)
+        let destinationViewController: StockManagerViewController = storyboard.instantiateViewController(
+            identifier: StockManagerViewController.storyboardIdentifier
+        ) { [weak self] coder in
+            guard let self else { return StockManagerViewController(coder: coder) }
+            return StockManagerViewController(coder: coder, fruitStore: sourceDataStore)
+        }
+        navigateToStockManager(source: sourceViewController, destination: destinationViewController)
+    }
+    
     private let sourceDataStore: FruitStore
     var sourceViewController: JuiceMakerViewController?
     

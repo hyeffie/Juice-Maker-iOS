@@ -22,7 +22,7 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
     
     private let juiceMaker: JuiceMaker?
     
-    private let router: JuiceMakerRouter?
+    private let router: (any JuiceMakerRoutable)?
     
     required init?(coder: NSCoder) {
         self.stockDisplay = nil
@@ -73,7 +73,7 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
     }
     
     @IBAction func editStock(_ sender: UIBarButtonItem) {
-        router?.routeToStockManager()
+        router?.routeToNextViewController()
     }
     
     private func setUp() {
@@ -104,7 +104,7 @@ extension JuiceMakerViewController: StockDisplayResultDisplayable {
 extension JuiceMakerViewController: JuiceMakerResultDisplayable {
     func displayMakingResult(viewModel: JuiceMakerModel.ViewModel) {
         guard let juiceName = viewModel.juiceName else {
-            let action: AlertActionHandler = { [weak self] _ in self?.router?.routeToStockManager() }
+            let action: AlertActionHandler = { [weak self] _ in self?.router?.routeToNextViewController() }
             present(JuiceMakerAlert.fruitShortage(editAction: action).alertController, animated: true)
             return
         }
