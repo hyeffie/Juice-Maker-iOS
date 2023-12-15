@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class StockManagerViewController: UIViewController, StoryboardIdentifiale {
+final class StockManagerViewController: UIViewController, StoryboardIdentifiable {
     @IBOutlet private weak var strawberryStockLabel: UILabel!
     
     @IBOutlet private weak var bananaStockLabel: UILabel!

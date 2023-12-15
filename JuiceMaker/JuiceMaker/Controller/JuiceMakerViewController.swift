@@ -6,7 +6,7 @@
 
 import UIKit
 
-final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
+final class JuiceMakerViewController: UIViewController, StoryboardIdentifiable {
     
     @IBOutlet private weak var strawberryStockLabel: UILabel!
     
