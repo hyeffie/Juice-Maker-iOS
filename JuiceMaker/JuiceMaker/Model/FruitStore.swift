@@ -39,4 +39,14 @@ final class FruitStore {
     func fetch() -> [FruitStock] {
         return self.fruitStocks.map { stock in stock.value }
     }
+    
+    func updateStock(of fruitType: Fruit, to newCount: Int) throws -> FruitStock {
+        // TODO: [refactor] 이 로직 consume이랑 같음
+        guard let copyOfTargetStock = self.fruitStocks[fruitType] else {
+            throw JuiceMakerError.fruitStockNotFound
+        }
+        let newStock = try copyOfTargetStock.updateCount(to: newCount)
+        self.fruitStocks[fruitType] = newStock
+        return newStock
+    }
 }

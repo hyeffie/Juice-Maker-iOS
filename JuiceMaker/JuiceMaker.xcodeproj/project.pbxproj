@@ -30,6 +30,7 @@
 		F436B6EC2B26A7D70045F0C8 /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6EB2B26A7D70045F0C8 /* StoryboardIdentifiable.swift */; };
 		F436B6EE2B26AA7E0045F0C8 /* JuiceMakerRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6ED2B26AA7E0045F0C8 /* JuiceMakerRoutable.swift */; };
 		F436B6F62B26FED00045F0C8 /* JuiceMakerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6F52B26FED00045F0C8 /* JuiceMakerAlert.swift */; };
+		F4559DB72B2C39C6005A707A /* StockModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4559DB62B2C39C6005A707A /* StockModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		F436B6EB2B26A7D70045F0C8 /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
 		F436B6ED2B26AA7E0045F0C8 /* JuiceMakerRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerRoutable.swift; sourceTree = "<group>"; };
 		F436B6F52B26FED00045F0C8 /* JuiceMakerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerAlert.swift; sourceTree = "<group>"; };
+		F4559DB62B2C39C6005A707A /* StockModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				F436B6DC2B23449A0045F0C8 /* JuiceMaking */,
 				F436B6D92B2338060045F0C8 /* StockDisplay */,
 				F436B6F22B26C1D10045F0C8 /* Router */,
+				F4559DB62B2C39C6005A707A /* StockModifier.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F436B6D82B2337D50045F0C8 /* StockDisplayResultConvertable.swift in Sources */,
+				F4559DB72B2C39C6005A707A /* StockModifier.swift in Sources */,
 				F436B6DE2B2344FA0045F0C8 /* JuiceMakerModel.swift in Sources */,
 				C71CD66B266C7ACB0038B9CB /* FruitStore.swift in Sources */,
 				F436B6EC2B26A7D70045F0C8 /* StoryboardIdentifiable.swift in Sources */,
