@@ -44,35 +44,35 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiale {
         stockDisplay?.displayStock()
     }
     
-    @IBAction func makeStrawberryBananaJuice(_ sender: UIButton) {
+    @IBAction private func makeStrawberryBananaJuice(_ sender: UIButton) {
         juiceMaker?.makeJuice(flavor: .strawberryBanana)
     }
     
-    @IBAction func makeMangoKiwiJuice(_ sender: UIButton) {
+    @IBAction private func makeMangoKiwiJuice(_ sender: UIButton) {
         juiceMaker?.makeJuice(flavor: .mangoKiwi)
     }
     
-    @IBAction func makeStrawberryJuice(_ sender: UIButton) {
+    @IBAction private func makeStrawberryJuice(_ sender: UIButton) {
         juiceMaker?.makeJuice(flavor: .strawberry)
     }
     
-    @IBAction func makeBananaJuice(_ sender: UIButton) {
+    @IBAction private func makeBananaJuice(_ sender: UIButton) {
         juiceMaker?.makeJuice(flavor: .banana)
     }
     
-    @IBAction func makePineappleJuice(_ sender: UIButton) {
+    @IBAction private func makePineappleJuice(_ sender: UIButton) {
         juiceMaker?.makeJuice(flavor: .pineapple)
     }
     
-    @IBAction func makeKiwiJuice(_ sender: UIButton) {
+    @IBAction private func makeKiwiJuice(_ sender: UIButton) {
         juiceMaker?.makeJuice(flavor: .kiwi)
     }
     
-    @IBAction func makeMangoJuice(_ sender: UIButton) {
+    @IBAction private func makeMangoJuice(_ sender: UIButton) {
         juiceMaker?.makeJuice(flavor: .mango)
     }
     
-    @IBAction func editStock(_ sender: UIBarButtonItem) {
+    @IBAction private func editStock(_ sender: UIBarButtonItem) {
         router?.routeToNextViewController()
     }
     
