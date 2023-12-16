@@ -9,7 +9,7 @@ protocol StockModifierResultConvertable {
     func convertResult(_ result: StockModifierModel.Result)
 }
 
-final class StockModifierResultConverter {
+final class StockModifierResultConverter: StockModifierResultConvertable {
     weak var display: StockModifierResultDisplayable?
     
     func convertResult(_ result: StockModifierModel.Result) {

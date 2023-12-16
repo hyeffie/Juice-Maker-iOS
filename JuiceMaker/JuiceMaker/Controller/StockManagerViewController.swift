@@ -20,13 +20,17 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiable
     
     private let stockDisplay: StockDisplay?
     
+    private let stockModifier: StockModifier?
+    
     required init?(coder: NSCoder) {
         self.stockDisplay = nil
+        self.stockModifier = nil
         super.init(coder: coder)
     }
     
     init?(coder: NSCoder, fruitStore: FruitStore) {
         self.stockDisplay = StockDisplay(fruitStore: fruitStore)
+        self.stockModifier = StockModifier(fruitStore: fruitStore)
         super.init(coder: coder)
         setUp()
     }
@@ -41,9 +45,13 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiable
     }
     
     private func setUp() {
-        let resultConverter = StockDisplayResultConverter()
-        resultConverter.display = self
-        stockDisplay?.resultConverter = resultConverter
+        let stockDisplayResultConverter = StockDisplayResultConverter()
+        stockDisplayResultConverter.display = self
+        stockDisplay?.resultConverter = stockDisplayResultConverter
+        
+        let stockModifierResultConverter = StockModifierResultConverter()
+        stockModifierResultConverter.display = self
+        stockModifier?.resultConverter = stockModifierResultConverter
     }
 }
 
@@ -56,5 +64,11 @@ extension StockManagerViewController: StockDisplayResultDisplayable {
         self.pineappleStockLabel.text = "\(eachFruitCount.pineappleCount)"
         self.kiwiStockLabel.text = "\(eachFruitCount.kiwiCount)"
         self.mangoStockLabel.text = "\(eachFruitCount.mangoCount)"
+    }
+}
+
+extension StockManagerViewController: StockModifierResultDisplayable {
+    func displayModifiedStock(viewModel: StockModifierModel.ViewModel) {
+        
     }
 }
