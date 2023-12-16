@@ -11,7 +11,7 @@ enum StockModifierModel {
     }
     
     struct ViewModel {
-        
+        let stock: FruitStock?
     }
 }
 

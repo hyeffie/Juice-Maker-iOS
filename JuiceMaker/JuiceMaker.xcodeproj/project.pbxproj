@@ -33,6 +33,7 @@
 		F4559DB72B2C39C6005A707A /* StockModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4559DB62B2C39C6005A707A /* StockModifier.swift */; };
 		F4559DB92B2C4C97005A707A /* StockModifierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4559DB82B2C4C97005A707A /* StockModifierModel.swift */; };
 		F4559DBB2B2C4CA6005A707A /* StockModifierResultConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4559DBA2B2C4CA6005A707A /* StockModifierResultConvertable.swift */; };
+		F4559DBD2B2D5305005A707A /* StockModifierResultDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4559DBC2B2D5305005A707A /* StockModifierResultDisplayable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		F4559DB62B2C39C6005A707A /* StockModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModifier.swift; sourceTree = "<group>"; };
 		F4559DB82B2C4C97005A707A /* StockModifierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModifierModel.swift; sourceTree = "<group>"; };
 		F4559DBA2B2C4CA6005A707A /* StockModifierResultConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModifierResultConvertable.swift; sourceTree = "<group>"; };
+		F4559DBC2B2D5305005A707A /* StockModifierResultDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModifierResultDisplayable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				F4559DB62B2C39C6005A707A /* StockModifier.swift */,
 				F4559DB82B2C4C97005A707A /* StockModifierModel.swift */,
 				F4559DBA2B2C4CA6005A707A /* StockModifierResultConvertable.swift */,
+				F4559DBC2B2D5305005A707A /* StockModifierResultDisplayable.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				C73DAF3B255D0CDD00020D38 /* JuiceMakerViewController.swift in Sources */,
 				F42621552B1DBF3F00C6423A /* JuiceFlavor.swift in Sources */,
 				F42621532B1DBF2E00C6423A /* JuiceMakerError.swift in Sources */,
+				F4559DBD2B2D5305005A707A /* StockModifierResultDisplayable.swift in Sources */,
 				F42621512B1DBEFD00C6423A /* FruitStock.swift in Sources */,
 				F4559DB92B2C4C97005A707A /* StockModifierModel.swift in Sources */,
 				F426214F2B1DBEE800C6423A /* Fruit.swift in Sources */,
