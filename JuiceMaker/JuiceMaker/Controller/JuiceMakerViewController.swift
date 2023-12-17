@@ -116,3 +116,9 @@ extension JuiceMakerViewController: JuiceMakerResultDisplayable {
         present(JuiceMakerAlert.juiceIsReady(juiceName: juiceName).alertController, animated: true)
     }
 }
+
+extension JuiceMakerViewController: StockManagerViewControllerDismissingDelegate {
+    func handleDismising() {
+        stockDisplay?.displayStock()
+    }
+}
