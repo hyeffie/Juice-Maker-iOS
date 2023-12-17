@@ -73,7 +73,9 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiable {
     }
     
     @IBAction private func editStock(_ sender: UIBarButtonItem) {
-        router?.routeToNextViewController()
+        router?.routeToNextViewController { [weak self] in
+            self?.stockDisplay?.displayStock()
+        }
     }
     
     private func setUp() {
@@ -104,7 +106,10 @@ extension JuiceMakerViewController: StockDisplayResultDisplayable {
 extension JuiceMakerViewController: JuiceMakerResultDisplayable {
     func displayMakingResult(viewModel: JuiceMakerModel.ViewModel) {
         guard let juiceName = viewModel.juiceName else {
-            let action: AlertActionHandler = { [weak self] _ in self?.router?.routeToNextViewController() }
+            let action: AlertActionHandler = { [weak self] _ in self?.router?.routeToNextViewController {
+                    self?.stockDisplay?.displayStock()
+                }
+            }
             present(JuiceMakerAlert.fruitShortage(editAction: action).alertController, animated: true)
             return
         }
@@ -114,11 +119,5 @@ extension JuiceMakerViewController: JuiceMakerResultDisplayable {
         
         // 2. alert
         present(JuiceMakerAlert.juiceIsReady(juiceName: juiceName).alertController, animated: true)
-    }
-}
-
-extension JuiceMakerViewController: StockManagerViewControllerDismissingDelegate {
-    func handleDismising() {
-        stockDisplay?.displayStock()
     }
 }

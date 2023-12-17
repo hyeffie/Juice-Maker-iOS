@@ -32,23 +32,23 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiable
     
     private let stockModifier: StockModifier?
     
-    private weak var dismissingDelegate: StockManagerViewControllerDismissingDelegate?
+    private var dismissingHandler: (() -> Void)?
     
     required init?(coder: NSCoder) {
         self.stockDisplay = nil
         self.stockModifier = nil
-        self.dismissingDelegate = nil
+        self.dismissingHandler = nil
         super.init(coder: coder)
     }
     
     init?(
         coder: NSCoder,
         fruitStore: FruitStore, 
-        dismissingDelegate: StockManagerViewControllerDismissingDelegate
+        dismissingHandler: (() -> Void)?
     ) {
         self.stockDisplay = StockDisplay(fruitStore: fruitStore)
         self.stockModifier = StockModifier(fruitStore: fruitStore)
-        self.dismissingDelegate = dismissingDelegate
+        self.dismissingHandler = dismissingHandler
         super.init(coder: coder)
         setUp()
     }
@@ -60,7 +60,7 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiable
     }
     
     @IBAction private func completeManaging(_ sender: Any) {
-        self.dismissingDelegate?.handleDismising()
+        self.dismissingHandler?()
         self.dismiss(animated: true)
     }
     
@@ -144,8 +144,4 @@ extension StockManagerViewController: StockModifierResultDisplayable {
             mangoStockLabel.text = "\(newStock.count)"
         }
     }
-}
-
-protocol StockManagerViewControllerDismissingDelegate: NSObjectProtocol {
-    func handleDismising()
 }
