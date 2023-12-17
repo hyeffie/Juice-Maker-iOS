@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCG-dP-Fms">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DCG-dP-Fms">
     <device id="retina6_0" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -301,6 +301,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZQk-f4-zrz">
                                                 <rect key="frame" x="0.0" y="124" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="changeStockCount:" destination="Yu1-lM-nqp" eventType="valueChanged" id="Uym-5k-ZuY"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -322,6 +325,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-2N-3iP">
                                                 <rect key="frame" x="0.0" y="124" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="changeStockCount:" destination="Yu1-lM-nqp" eventType="valueChanged" id="Kra-q6-Se5"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -343,6 +349,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Rcr-xr-eqz">
                                                 <rect key="frame" x="0.0" y="124" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="changeStockCount:" destination="Yu1-lM-nqp" eventType="valueChanged" id="b2E-L3-fLs"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -364,6 +373,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="klA-59-Nu4">
                                                 <rect key="frame" x="0.0" y="124" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="changeStockCount:" destination="Yu1-lM-nqp" eventType="valueChanged" id="jRF-uu-vO3"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -385,6 +397,9 @@
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-6P-grO">
                                                 <rect key="frame" x="0.0" y="124" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="changeStockCount:" destination="Yu1-lM-nqp" eventType="valueChanged" id="UfE-6t-aR0"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                     </stackView>
@@ -406,10 +421,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bananaCountStepper" destination="O5s-2N-3iP" id="Hei-hk-0jO"/>
                         <outlet property="bananaStockLabel" destination="gKu-86-RhI" id="Mig-VK-Rvg"/>
+                        <outlet property="kiwiCountStepper" destination="klA-59-Nu4" id="O3W-kS-uOE"/>
                         <outlet property="kiwiStockLabel" destination="ZDv-1m-HBY" id="uuc-91-ZkG"/>
+                        <outlet property="mangoCountStepper" destination="xbn-6P-grO" id="WLY-Bi-obR"/>
                         <outlet property="mangoStockLabel" destination="YJI-ER-LJR" id="yrM-UJ-lkT"/>
+                        <outlet property="pineappleCountStepper" destination="Rcr-xr-eqz" id="fnK-ty-lhx"/>
                         <outlet property="pineappleStockLabel" destination="MpT-VW-hCb" id="wFX-OI-uOH"/>
+                        <outlet property="strawberryCountStepper" destination="ZQk-f4-zrz" id="p03-hF-tfL"/>
                         <outlet property="strawberryStockLabel" destination="0yV-kn-zaT" id="oM8-HC-nre"/>
                     </connections>
                 </viewController>
@@ -444,7 +464,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
