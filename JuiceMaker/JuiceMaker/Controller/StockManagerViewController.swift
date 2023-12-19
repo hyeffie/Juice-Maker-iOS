@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class StockManagerViewController: UIViewController, StoryboardIdentifiable {
+final class StockManagerViewController: UIViewController {
     @IBOutlet private weak var strawberryStockLabel: UILabel!
     
     @IBOutlet private weak var bananaStockLabel: UILabel!
@@ -103,6 +103,23 @@ final class StockManagerViewController: UIViewController, StoryboardIdentifiable
             mangoCountStepper,
         ].forEach { stepper in
             stepper?.stepValue = 1.0
+        }
+    }
+}
+
+extension StockManagerViewController: StoryboardBased {
+    static func instantiate(
+        fruitStore: FruitStore,
+        dismissingDelegate: StockManagerViewControllerDismissingDelegate
+    ) -> Self {
+        return sceneStoryboard.instantiateViewController(
+            identifier: storyboardIdentifier
+        ) { coder in
+            return Self.init(
+                coder: coder,
+                fruitStore: fruitStore,
+                dismissingDelegate: dismissingDelegate
+            )
         }
     }
 }

@@ -16,17 +16,21 @@ final class JuiceMakerRouter: JuiceMakerRoutable {
     func routeToNextViewController() {
         guard let sourceViewController else { return }
         
-        let storyboard = UIStoryboard(name: "Main", bundle: .none)
-        let destinationViewController: StockManagerViewController = storyboard.instantiateViewController(
-            identifier: StockManagerViewController.storyboardIdentifier
-        ) { [weak self] coder in
-            guard let self else { return StockManagerViewController(coder: coder) }
-            return StockManagerViewController(
-                coder: coder,
-                fruitStore: sourceDataStore,
-                dismissingDelegate: sourceViewController
-            )
-        }
+//        let storyboard = UIStoryboard(name: "Main", bundle: .none)
+//        let destinationViewController: StockManagerViewController = storyboard.instantiateViewController(
+//            identifier: StockManagerViewController.storyboardIdentifier
+//        ) { [weak self] coder in
+//            guard let self else { return StockManagerViewController(coder: coder) }
+//            return StockManagerViewController(
+//                coder: coder,
+//                fruitStore: sourceDataStore,
+//                dismissingDelegate: sourceViewController
+//            )
+//        }
+        let destinationViewController = StockManagerViewController.instantiate(
+            fruitStore: sourceDataStore,
+            dismissingDelegate: sourceViewController
+        )
         navigateToStockManager(source: sourceViewController, destination: destinationViewController)
     }
     

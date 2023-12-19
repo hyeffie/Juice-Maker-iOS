@@ -6,7 +6,7 @@
 
 import UIKit
 
-final class JuiceMakerViewController: UIViewController, StoryboardIdentifiable {
+final class JuiceMakerViewController: UIViewController {
     
     @IBOutlet private weak var strawberryStockLabel: UILabel!
     
@@ -86,6 +86,16 @@ final class JuiceMakerViewController: UIViewController, StoryboardIdentifiable {
         juiceConverter.display = self
         
         self.router?.sourceViewController = self
+    }
+}
+
+extension JuiceMakerViewController: StoryboardBased {
+    static func instantiate(fruitStore: FruitStore) -> Self {
+        return sceneStoryboard.instantiateViewController(
+            identifier: storyboardIdentifier
+        ) { coder in
+            return Self.init(coder: coder, fruitStore: fruitStore)
+        }
     }
 }
 

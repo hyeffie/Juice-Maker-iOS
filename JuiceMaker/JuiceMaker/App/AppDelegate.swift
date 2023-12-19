@@ -14,17 +14,19 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let fruitStore = FruitStore(initialCount: 10)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: .none)
-        let viewController = storyboard.instantiateViewController(
-            identifier: JuiceMakerViewController.storyboardIdentifier
-        ) { coder in
-            return JuiceMakerViewController(coder: coder, fruitStore: fruitStore)
-        }
+//        let storyboard = UIStoryboard(name: "Main", bundle: .none)
+//        let viewController = storyboard.instantiateViewController(
+//            identifier: JuiceMakerViewController.storyboardIdentifier
+//        ) { coder in
+//            return JuiceMakerViewController(coder: coder, fruitStore: fruitStore)
+//        }
+        let viewController = JuiceMakerViewController.instantiate(fruitStore: fruitStore)
         
         let rootViewController = UINavigationController(rootViewController: viewController)
-        window?.rootViewController = rootViewController
-        window?.makeKeyAndVisible()
-        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = rootViewController
+        window.makeKeyAndVisible()
+        self.window = window
         return true
     }
 
@@ -38,4 +40,3 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 //        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
 //    }
 }
-
