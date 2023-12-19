@@ -23,10 +23,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController = JuiceMakerViewController.instantiate(fruitStore: fruitStore)
         
         let rootViewController = UINavigationController(rootViewController: viewController)
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = rootViewController
-        window.makeKeyAndVisible()
-        self.window = window
+//        let window = UIWindow(frame: UIScreen.main.bounds)
+//        window.rootViewController = rootViewController
+//        window.makeKeyAndVisible()
+//        self.window = window
         return true
     }
 
