@@ -167,10 +167,7 @@
 				F436B6DC2B23449A0045F0C8 /* JuiceMaking */,
 				F436B6D92B2338060045F0C8 /* StockDisplay */,
 				F436B6F22B26C1D10045F0C8 /* Router */,
-				F4559DB62B2C39C6005A707A /* StockModifier.swift */,
-				F4559DB82B2C4C97005A707A /* StockModifierModel.swift */,
-				F4559DBA2B2C4CA6005A707A /* StockModifierResultConvertable.swift */,
-				F4559DBC2B2D5305005A707A /* StockModifierResultDisplayable.swift */,
+				F4B6BCDB2B31798B0020A6C0 /* StockModifier */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -200,6 +197,17 @@
 				F436B6ED2B26AA7E0045F0C8 /* JuiceMakerRoutable.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		F4B6BCDB2B31798B0020A6C0 /* StockModifier */ = {
+			isa = PBXGroup;
+			children = (
+				F4559DB62B2C39C6005A707A /* StockModifier.swift */,
+				F4559DB82B2C4C97005A707A /* StockModifierModel.swift */,
+				F4559DBA2B2C4CA6005A707A /* StockModifierResultConvertable.swift */,
+				F4559DBC2B2D5305005A707A /* StockModifierResultDisplayable.swift */,
+			);
+			path = StockModifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
