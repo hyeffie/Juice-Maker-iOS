@@ -19,7 +19,9 @@
 		F42621512B1DBEFD00C6423A /* FruitStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42621502B1DBEFD00C6423A /* FruitStock.swift */; };
 		F42621532B1DBF2E00C6423A /* JuiceMakerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42621522B1DBF2E00C6423A /* JuiceMakerError.swift */; };
 		F42621552B1DBF3F00C6423A /* JuiceFlavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42621542B1DBF3F00C6423A /* JuiceFlavor.swift */; };
-		F42D32E22B28772E00421D8C /* JuiceMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D32E12B28772E00421D8C /* JuiceMakerTests.swift */; };
+		F42D32E92B28778B00421D8C /* String+uppercased.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D32E82B28778B00421D8C /* String+uppercased.swift */; };
+		F42D32EB2B28796200421D8C /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D32EA2B28796200421D8C /* StringExtensionsTests.swift */; };
+		F42D32EC2B287A8400421D8C /* String+uppercased.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D32E82B28778B00421D8C /* String+uppercased.swift */; };
 		F436B6D42B232EC40045F0C8 /* StockDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6D32B232EC40045F0C8 /* StockDisplayModel.swift */; };
 		F436B6D62B2330080045F0C8 /* StockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6D52B2330080045F0C8 /* StockDisplay.swift */; };
 		F436B6D82B2337D50045F0C8 /* StockDisplayResultConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436B6D72B2337D50045F0C8 /* StockDisplayResultConvertable.swift */; };
@@ -59,7 +61,8 @@
 		F42621522B1DBF2E00C6423A /* JuiceMakerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerError.swift; sourceTree = "<group>"; };
 		F42621542B1DBF3F00C6423A /* JuiceFlavor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceFlavor.swift; sourceTree = "<group>"; };
 		F42D32DF2B28772E00421D8C /* JuiceMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JuiceMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F42D32E12B28772E00421D8C /* JuiceMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuiceMakerTests.swift; sourceTree = "<group>"; };
+		F42D32E82B28778B00421D8C /* String+uppercased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+uppercased.swift"; sourceTree = "<group>"; };
+		F42D32EA2B28796200421D8C /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		F436B6D32B232EC40045F0C8 /* StockDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplayModel.swift; sourceTree = "<group>"; };
 		F436B6D52B2330080045F0C8 /* StockDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplay.swift; sourceTree = "<group>"; };
 		F436B6D72B2337D50045F0C8 /* StockDisplayResultConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDisplayResultConvertable.swift; sourceTree = "<group>"; };
@@ -156,7 +159,7 @@
 		F42D32E02B28772E00421D8C /* JuiceMakerTests */ = {
 			isa = PBXGroup;
 			children = (
-				F42D32E12B28772E00421D8C /* JuiceMakerTests.swift */,
+				F42D32EA2B28796200421D8C /* StringExtensionsTests.swift */,
 			);
 			path = JuiceMakerTests;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				F436B6EB2B26A7D70045F0C8 /* StoryboardIdentifiale.swift */,
 				F42621522B1DBF2E00C6423A /* JuiceMakerError.swift */,
 				F436B6F52B26FED00045F0C8 /* JuiceMakerAlert.swift */,
+				F42D32E82B28778B00421D8C /* String+uppercased.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -323,6 +327,7 @@
 				F436B6D82B2337D50045F0C8 /* StockDisplayResultConvertable.swift in Sources */,
 				F436B6DE2B2344FA0045F0C8 /* JuiceMakerModel.swift in Sources */,
 				C71CD66B266C7ACB0038B9CB /* FruitStore.swift in Sources */,
+				F42D32E92B28778B00421D8C /* String+uppercased.swift in Sources */,
 				F436B6EC2B26A7D70045F0C8 /* StoryboardIdentifiale.swift in Sources */,
 				F436B6F62B26FED00045F0C8 /* JuiceMakerAlert.swift in Sources */,
 				F436B6D62B2330080045F0C8 /* StockDisplay.swift in Sources */,
@@ -347,7 +352,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F42D32E22B28772E00421D8C /* JuiceMakerTests.swift in Sources */,
+				F42D32EC2B287A8400421D8C /* String+uppercased.swift in Sources */,
+				F42D32EB2B28796200421D8C /* StringExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,12 +511,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y67S3384LP;
 				INFOPLIST_FILE = JuiceMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.yagom.JuiceMaker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyeffie.JuiceMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -523,12 +530,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y67S3384LP;
 				INFOPLIST_FILE = JuiceMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.yagom.JuiceMaker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyeffie.JuiceMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -547,7 +555,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyeffie.JuiceMakerTests;
@@ -572,7 +580,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyeffie.JuiceMakerTests;
