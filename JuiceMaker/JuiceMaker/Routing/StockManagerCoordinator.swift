@@ -28,8 +28,8 @@ final class StockManagerCoordinator: Coordinator {
             stockManagerUseCase: stockManager,
             coordinator: self
         )
-        let destinationViewController = UINavigationController(rootViewController: stockManagerViewController)
-        self.navigationController.present(destinationViewController, animated: true)
+//        let destinationViewController = UINavigationController(rootViewController: stockManagerViewController)
+        self.navigationController.present(stockManagerViewController, animated: true)
     }
 }
 
