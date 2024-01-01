@@ -9,7 +9,7 @@ import UIKit
 
 final class StockManagerCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    var coordinator: StockManagerCoordinatorDelegate?
+    var parentCoordinator: StockManagerCoordinatorDelegate?
     
     private let navigationController: UINavigationController
     private let fruitStore: FruitStore
@@ -35,15 +35,13 @@ final class StockManagerCoordinator: Coordinator {
 
 // MARK: - StockManagerViewControllerDelegate Implementation
 
-protocol StockManagerViewControllerDelegate {
+protocol StockManagerViewControllerDelegate: AnyObject {
     func endStockManaging()
 }
 
 extension StockManagerCoordinator: StockManagerViewControllerDelegate {
     func endStockManaging() {
-//        guard let viewController = self.navigationController.viewControllers.last else { return }
-//        viewController.dismiss(animated: true)
         self.navigationController.dismiss(animated: true)
-        self.coordinator?.didEndStockManaging(self)
+        self.parentCoordinator?.didEndStockManaging(self)
     }
 }
