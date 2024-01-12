@@ -41,6 +41,7 @@ final class JuiceMakerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         juiceMakerUseCase?.displayStock()
+        
     }
 }
 
@@ -84,6 +85,23 @@ extension JuiceMakerViewController {
         self.juiceMakerUseCase?.resultConverter = juiceConverter
         juiceConverter.display = self
     }
+    
+    @available(iOS 15.0, *)
+    private func setAccessibility() {
+        let strawberryCount = (self.strawberryStockLabel.text?.converttoNumber())!
+        self.strawberryStockLabel.accessibilityLabel = "딸기 재고 \(strawberryCount) 개"
+        self.bananaStockLabel.accessibilityLabel = "바나나 재고"
+        self.pineappleStockLabel.accessibilityLabel = "파인애플 재고"
+        self.kiwiStockLabel.accessibilityLabel = "키위 재고"
+        self.mangoStockLabel.accessibilityLabel = "망고 재고"
+    }
+}
+
+extension String {
+    @available(iOS 15.0, *)
+    func converttoNumber() -> String {
+        return try! String(describing: Int(self, format: .number))
+    }
 }
 
 extension JuiceMakerViewController: StoryboardBased {
@@ -113,6 +131,11 @@ extension JuiceMakerViewController: StockDisplayResultDisplayable {
         case .failure:
             return
         }
+        if #available(iOS 15.0, *) {
+            setAccessibility()
+        } else {
+            return
+        }
     }
 }
 
@@ -129,6 +152,11 @@ extension JuiceMakerViewController: JuiceMakerResultDisplayable {
                 self?.coordinator?.startStockManaging()
             }
             present(JuiceMakerAlert.fruitShortage(editAction: action).alertController, animated: true)
+        }
+        if #available(iOS 15.0, *) {
+            setAccessibility()
+        } else {
+            return
         }
     }
     
@@ -148,5 +176,10 @@ extension JuiceMakerViewController: JuiceMakerResultDisplayable {
 extension JuiceMakerViewController: ModalViewControllerDismissingHandlable {
     func juiceMakerViewControllerWillAppear() {
         self.juiceMakerUseCase?.displayStock()
+        if #available(iOS 15.0, *) {
+            setAccessibility()
+        } else {
+            return
+        }
     }
 }
